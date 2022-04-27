@@ -22,32 +22,39 @@ void show() {
 
 String verificarOpcaoEscolhida(int opcao, double salario, double hora) {
   if (opcao == 1) {
-    return valorHora(salario, hora);
+    return valorHora(salario, hora, (salario, hora) => (salario / hora));
   } else if (opcao == 2) {
-    return horaExtraComum(salario, hora);
+    return horaExtraComum(salario, hora, (salario, hora) => (salario / hora) * 1.5);
   } else if (opcao == 3) {
-    return horaExtraNoturna(salario, hora);
+    return horaExtraNoturna(salario, hora, (salario, hora) => ((salario / hora) * 1.5) * 1.2);
   } else {
-    return horaExtraDomingoferiado(salario, hora);
+    return horaExtraDomingoferiado(salario, hora, (salario, hora) => (salario/hora) * 2);
   }
 }
 
-String valorHora(double salario, double hora) {
-  double valorHora = salario / hora;
+String valorHora(double salario, double hora, Function valorDaHora) {
+  double valorHora = valorDaHora(salario, hora);
+  //double valorHora = salario / hora; //Sem o function
   return 'O valor da sua hora é de: ' + valorHora.toString();
 }
 
-String horaExtraComum(double salario, double hora) {
-  double horaExtraComum = (salario / hora) * 1.5;
+String horaExtraComum(
+  double salario, double hora, Function calculoHoraExtraComum) {
+  double horaExtraComum = calculoHoraExtraComum(salario, hora);
+  //double horaExtraComum = (salario / hora) * 1.5; //Sem o function
   return 'O valor da sua hora será de: ' + horaExtraComum.toString();
 }
 
-String horaExtraNoturna(double salario, double hora) {
-  double horaExtraNoturna = (((salario / hora) * 1.5) * 1.2);
+String horaExtraNoturna(
+  double salario, double hora, Function calculoHoraExtraNoturna) {
+  double horaExtraNoturna = calculoHoraExtraNoturna(salario, hora);
+  //double horaExtraNoturna = (((salario / hora) * 1.5) * 1.2); //Sem o function
   return 'O valor da sua hora será de: ' + horaExtraNoturna.toString();
 }
 
-String horaExtraDomingoferiado(double salario, double hora) {
-  double horaExtraDomingoFeriado = (salario / hora) * 2;
+String horaExtraDomingoferiado(
+  double salario, double hora, Function calculoHoraExtraDomingoFeriado) {
+  double horaExtraDomingoFeriado =calculoHoraExtraDomingoFeriado(salario, hora);
+  //double horaExtraDomingoFeriado = (salario / hora) * 2;  //Sem o function
   return 'O valor da sua hora será de: ' + horaExtraDomingoFeriado.toString();
 }
