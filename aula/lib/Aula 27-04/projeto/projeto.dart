@@ -1,4 +1,3 @@
-
 //parametro opcional(com valor padrão)////////////////////////
 import 'dart:io';
 
@@ -32,4 +31,14 @@ String valorHora([double salario = 1800, double hora = 220]) {
 String horaExtraComum([double salario = 1800, double hora = 220]) {
   double horaExtra = (salario / hora) * 1.5;
   return 'O valor da sua hora é de: ' + horaExtra.toString();
+}
+
+String horaExtraNoturna([double salario = 1800, double hora = 220]) {
+  double horaExtraNoturna = ((salario / hora) * 1.7);
+  return 'O valor da sua hora é de: ' + horaExtraNoturna.toString();
+}
+
+String horaExtraFeriado([double salario = 1800, double hora = 220]) {
+  double horaExtraFeriado = ((salario / hora) * 2.0);
+  return 'O valor da sua hora é de: ' + horaExtraFeriado.toString();
 }

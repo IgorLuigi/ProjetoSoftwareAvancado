@@ -8,5 +8,5 @@ void show(){
   ''');
 
   print("Informe a opção que deseja: ");
-  var opcaoEscolhida = int.parse(stdin.readLineSync());
+  var opcaoEscolhida = int.parse(stdin.readLineSync()!);
 }
