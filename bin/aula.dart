@@ -7,6 +7,7 @@ import 'package:aula/Aula 27-04/exemploaula/exemploAula2.dart'
 import 'package:aula/Aula 30-04/aula.dart' as aula30_04;
 import 'package:aula/11-05/códigos.dart' as aula11_05;
 import 'package:aula/Aula 18-05/aula18-05.dart' as aula18_05;
+import 'package:aula/avaliação/avaliacao.dart' as avaliacao;
 
 void main(List<String> arguments) {
   //atividade2.show();
@@ -15,4 +16,5 @@ void main(List<String> arguments) {
   //projeto27_04_2.show();
   //aula30_04.show();
   //aula11_05.show();
+  avaliacao.show();
 }
